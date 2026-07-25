@@ -1,18 +1,19 @@
 {
   "name": "omniroute-port-bridge",
-  "version": "1.0.0",
-  "description": "Puente/proxy para acceder al dashboard y API de OmniRoute desde un puerto diferente cuando el puerto 20128 está bloqueado en entornos cloud.",
-  "main": "server.js",
+  "version": "2.0.0",
+  "description": "Puente/proxy para acceder al dashboard y API de OmniRoute desde un puerto diferente cuando el puerto 20128 está bloqueado en entornos cloud. Ahora con frontend Next.js para deploys que solo soportan frameworks frontend.",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [
     "omniroute",
     "proxy",
     "reverse-proxy",
     "gateway",
-    "ai"
+    "ai",
+    "nextjs"
   ],
   "author": "",
   "license": "MIT",
@@ -20,8 +21,11 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "http-proxy-middleware": "^3.0.0",
-    "dotenv": "^16.4.5"
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
